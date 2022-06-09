@@ -38,16 +38,6 @@
         "Type": "String",
         "Value": { "Ref": "AppSyncApiId" }
       }
-    },
-    "APIURL": {
-      "Type": "AWS:SSM:Parameter",
-      "Properties": {
-        "Name": "/amplify/apiurl",
-        "Type": "String",
-        "Value" : {
-
-        }
-      }
     }
   },
   "Conditions": {
