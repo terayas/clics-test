@@ -11,9 +11,9 @@ backend:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
         - echo $AWS_BRANCH
-        - chmod +x ./script.sh
+        - chmod +x ./script.sh ./bot-container.sh
         - export AWS_BRANCH=$AWS_BRANCH; export AWS_APP_ID=$AWS_APP_ID; ./script.sh
-        - $AWS_REGION
+        - export AWS_Region=$AWS_REGION; ./bot-container.sh
        
 frontend:
   phases:
