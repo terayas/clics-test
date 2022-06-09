@@ -1,0 +1,24 @@
+version: 1
+backend:
+  phases:
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - amplifyPush --simple
+        - echo $AWS_APP_ID
+        - echo $AMPLIFY_BACKEND_APP_ID
+        - aws ssm put-parameter --name /amplify/appid --value $AWS_APP_ID --type String
+        - aws ssm put-parameter --name /amplify/backendappid --value $AMPLIFY_BACKEND_APP_ID --type String
+        - ./script.sh
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
