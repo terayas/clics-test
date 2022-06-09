@@ -71,30 +71,7 @@
             "PolicyDocument":{
               "Version": "2012-10-17",
               "Statement": [
-                  {
-                      "Sid": "CLICloudformationPolicy",
-                      "Effect": "Allow",
-                      "Action": [
-                          "cloudformation:CreateChangeSet",
-                          "cloudformation:CreateStack",
-                          "cloudformation:DeleteStack",
-                          "cloudformation:DescribeChangeSet",
-                          "cloudformation:DescribeStackEvents",
-                          "cloudformation:DescribeStackResource",
-                          "cloudformation:DescribeStackResources",
-                          "cloudformation:DescribeStacks",
-                          "cloudformation:ExecuteChangeSet",
-                          "cloudformation:GetTemplate",
-                          "cloudformation:UpdateStack",
-                          "cloudformation:ListStackResources",
-                          "cloudformation:DeleteStackSet",
-                          "cloudformation:DescribeStackSet",
-                          "cloudformation:UpdateStackSet"
-                      ],
-                      "Resource": [
-                          "arn:aws:cloudformation:*:*:stack/amplify-*"
-                      ]
-                  },
+                  
                   {
                       "Sid": "CLIManageviaCFNPolicy",
                       "Effect": "Allow",
@@ -269,44 +246,8 @@
                               ]
                           }
                       }
-                  },
-                  {
-                      "Sid": "AmplifyStorageSDKCalls",
-                      "Effect": "Allow",
-                      "Action": [
-                          "s3:CreateBucket",
-                          "s3:DeleteBucket",
-                          "s3:DeleteBucketPolicy",
-                          "s3:DeleteBucketWebsite",
-                          "s3:DeleteObject",
-                          "s3:DeleteObjectVersion",
-                          "s3:GetBucketLocation",
-                          "s3:GetObject",
-                          "s3:ListAllMyBuckets",
-                          "s3:ListBucket",
-                          "s3:ListBucketVersions",
-                          "s3:PutBucketAcl",
-                          "s3:PutBucketCORS",
-                          "s3:PutBucketNotification",
-                          "s3:PutBucketPolicy",
-                          "s3:PutBucketVersioning",
-                          "s3:PutBucketWebsite",
-                          "s3:PutEncryptionConfiguration",
-                          "s3:PutLifecycleConfiguration",
-                          "s3:PutObject",
-                          "s3:PutObjectAcl"
-                      ],
-                      "Resource": "*"
-                  },
-                  {
-                    "Sid": "AppSync",
-                      "Effect": "Allow",
-                      "Action": [
-                          "appsync:GetDataSource",
-                          "appsync:GetGraphqlApi"
-                      ],
-                      "Resource": "*"
                   }
+                  
               ]
           }
         },
@@ -514,6 +455,75 @@
                     "codecommit:GitPull"
                 ],
                 "Resource": "*"
+            }            
+              ]
+            }
+          },
+          {
+            "PolicyName":"amplify-pipeline-third",
+            "PolicyDocument":{
+              "Version":"2012-10-17",
+              "Statement":[
+                {
+                  "Sid": "AmplifyStorageSDKCalls",
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:CreateBucket",
+                      "s3:DeleteBucket",
+                      "s3:DeleteBucketPolicy",
+                      "s3:DeleteBucketWebsite",
+                      "s3:DeleteObject",
+                      "s3:DeleteObjectVersion",
+                      "s3:GetBucketLocation",
+                      "s3:GetObject",
+                      "s3:ListAllMyBuckets",
+                      "s3:ListBucket",
+                      "s3:ListBucketVersions",
+                      "s3:PutBucketAcl",
+                      "s3:PutBucketCORS",
+                      "s3:PutBucketNotification",
+                      "s3:PutBucketPolicy",
+                      "s3:PutBucketVersioning",
+                      "s3:PutBucketWebsite",
+                      "s3:PutEncryptionConfiguration",
+                      "s3:PutLifecycleConfiguration",
+                      "s3:PutObject",
+                      "s3:PutObjectAcl"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                "Sid": "AppSync",
+                  "Effect": "Allow",
+                  "Action": [
+                      "appsync:GetDataSource",
+                      "appsync:GetGraphqlApi"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                "Sid": "CLICloudformationPolicy",
+                "Effect": "Allow",
+                "Action": [
+                    "cloudformation:CreateChangeSet",
+                    "cloudformation:CreateStack",
+                    "cloudformation:DeleteStack",
+                    "cloudformation:DescribeChangeSet",
+                    "cloudformation:DescribeStackEvents",
+                    "cloudformation:DescribeStackResource",
+                    "cloudformation:DescribeStackResources",
+                    "cloudformation:DescribeStacks",
+                    "cloudformation:ExecuteChangeSet",
+                    "cloudformation:GetTemplate",
+                    "cloudformation:UpdateStack",
+                    "cloudformation:ListStackResources",
+                    "cloudformation:DeleteStackSet",
+                    "cloudformation:DescribeStackSet",
+                    "cloudformation:UpdateStackSet"
+                ],
+                "Resource": [
+                    "arn:aws:cloudformation:*:*:stack/amplify-*"
+                ]
             },
             {
               "Sid": "AmplifySSMCalls",
@@ -538,6 +548,7 @@
               ],
               "Resource": "*"
           }
+
               ]
             }
           }
