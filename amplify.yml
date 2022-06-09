@@ -2,11 +2,15 @@ version: 1
 backend:
   phases:
     # IMPORTANT - Please verify your build commands
+    prebuild:
+      commands:
+        - yum install jq
+
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
-        - echo $AWS_APP_ID
+        - echo $AWS_BRANCH
         - chmod +x ./script.sh
         - export AWS_BRANCH=$AWS_BRANCH; export AWS_APP_ID=$AWS_APP_ID; ./script.sh
        
