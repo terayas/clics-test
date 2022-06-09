@@ -486,62 +486,62 @@
                           "appsync:GetGraphqlApi"
                       ],
                       "Resource": "*"
-                  },
-                  {
-                    "Sid": "PushDockerImage",
-                      "Effect": "Allow",
-                      "Action": [
-                          "ecr:PutImage"
-                      ],
-                      "Resource": "*"
-                  },
-                  {
-                    "Sid": "ContainerRepoReadWrite",
-                    "Effect": "Allow",
-                    "Action": [
-                        "ecr:PutImageTagMutability",
-                        "ecr:StartImageScan",
-                        "ecr:DescribeImageReplicationStatus",
-                        "ecr:ListTagsForResource",
-                        "ecr:UploadLayerPart",
-                        "ecr:BatchDeleteImage",
-                        "ecr:CreatePullThroughCacheRule",
-                        "ecr:BatchGetRepositoryScanningConfiguration",
-                        "ecr:DeleteRepository",
-                        "ecr:GetRegistryScanningConfiguration",
-                        "ecr:CompleteLayerUpload",
-                        "ecr:TagResource",
-                        "ecr:DescribeRepositories",
-                        "ecr:BatchCheckLayerAvailability",
-                        "ecr:ReplicateImage",
-                        "ecr:GetLifecyclePolicy",
-                        "ecr:GetRegistryPolicy",
-                        "ecr:PutLifecyclePolicy",
-                        "ecr:DescribeImageScanFindings",
-                        "ecr:GetLifecyclePolicyPreview",
-                        "ecr:CreateRepository",
-                        "ecr:DescribeRegistry",
-                        "ecr:PutImageScanningConfiguration",
-                        "ecr:GetDownloadUrlForLayer",
-                        "ecr:GetAuthorizationToken",
-                        "ecr:PutRegistryScanningConfiguration",
-                        "ecr:DeletePullThroughCacheRule",
-                        "ecr:DeleteLifecyclePolicy",
-                        "ecr:PutImage",
-                        "ecr:BatchImportUpstreamImage",
-                        "ecr:UntagResource",
-                        "ecr:BatchGetImage",
-                        "ecr:StartLifecyclePolicyPreview",
-                        "ecr:InitiateLayerUpload",
-                        "ecr:GetRepositoryPolicy",
-                        "ecr:PutReplicationConfiguration"
-                    ],
-                    "Resource": "*"
-                }
+                  }
               ]
           }
-        }
-
+        },
+        {
+          "PolicyName":"amplify-pipeline-docker",
+          "PolicyDocument":{
+              "Version":"2012-10-17",
+              "Statement":[
+                {
+                  "Sid": "ContainerRepoReadWrite",
+                  "Effect": "Allow",
+                  "Action": [
+                      "ecr:PutImageTagMutability",
+                      "ecr:StartImageScan",
+                      "ecr:DescribeImageReplicationStatus",
+                      "ecr:ListTagsForResource",
+                      "ecr:UploadLayerPart",
+                      "ecr:BatchDeleteImage",
+                      "ecr:CreatePullThroughCacheRule",
+                      "ecr:BatchGetRepositoryScanningConfiguration",
+                      "ecr:DeleteRepository",
+                      "ecr:GetRegistryScanningConfiguration",
+                      "ecr:CompleteLayerUpload",
+                      "ecr:TagResource",
+                      "ecr:DescribeRepositories",
+                      "ecr:BatchCheckLayerAvailability",
+                      "ecr:ReplicateImage",
+                      "ecr:GetLifecyclePolicy",
+                      "ecr:GetRegistryPolicy",
+                      "ecr:PutLifecyclePolicy",
+                      "ecr:DescribeImageScanFindings",
+                      "ecr:GetLifecyclePolicyPreview",
+                      "ecr:CreateRepository",
+                      "ecr:DescribeRegistry",
+                      "ecr:PutImageScanningConfiguration",
+                      "ecr:GetDownloadUrlForLayer",
+                      "ecr:GetAuthorizationToken",
+                      "ecr:PutRegistryScanningConfiguration",
+                      "ecr:DeletePullThroughCacheRule",
+                      "ecr:DeleteLifecyclePolicy",
+                      "ecr:PutImage",
+                      "ecr:BatchImportUpstreamImage",
+                      "ecr:UntagResource",
+                      "ecr:BatchGetImage",
+                      "ecr:StartLifecyclePolicyPreview",
+                      "ecr:InitiateLayerUpload",
+                      "ecr:GetRepositoryPolicy",
+                      "ecr:PutReplicationConfiguration"
+                  ],
+                  "Resource": "*"
+              }
+              ]
+            }
+          }
+        
         ]
       }
       
