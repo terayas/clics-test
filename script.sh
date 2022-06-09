@@ -1,6 +1,3 @@
 #!/bin/bash
 
-echo $REGION
-echo $AWS_BRANCH
-echo $ACCOUNT
-aws ssm put-parameter --name /amplify/backendappid --value $AMPLIFY_BACKEND_APP_ID --type String
+aws ssm put-parameter --cli-input-json '{ "Name": "/amplify/appurl", "Value": "https://${USER_BRANCH}.${AWS_APP_ID}.amplifyapp.com", "Type": "String"}'

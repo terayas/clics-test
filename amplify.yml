@@ -7,9 +7,9 @@ backend:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
         - echo $AWS_APP_ID
-        - echo $AMPLIFY_BACKEND_APP_ID
-        - aws ssm put-parameter --name /amplify/appurl --value "https://${USER_BRANCH}.${AWS_APP_ID}.amplifyapp.com" --type String
-
+        - chmod +x ./script.sh
+        - ./script.sh
+       
 frontend:
   phases:
     build:
