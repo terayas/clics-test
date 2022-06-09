@@ -2,9 +2,10 @@ version: 1
 backend:
   phases:
     # IMPORTANT - Please verify your build commands
-    prebuild:
+    preBuild:
       commands:
-        - yum install jq
+        - yum update --assumeyes
+        - yum install --assumeyes jq
 
     build:
       commands:

@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo "https://${AWS_TEST}"
+cd ./amplify/backend
+
+echo `pwd`
