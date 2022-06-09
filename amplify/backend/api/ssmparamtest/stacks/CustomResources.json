@@ -34,7 +34,7 @@
     "AppSyncParam": {
       "Type": "AWS::SSM::Parameter",
       "Properties": {
-        "Name": "/amplify/appid",
+        "Name": "/amplify/appsyncid",
         "Type": "String",
         "Value": { "Ref": "AppSyncApiId" }
       }
