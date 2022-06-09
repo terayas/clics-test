@@ -10,6 +10,11 @@
       "StackName": "amplify-ssmparamtest-dev-103943",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:357450907524:stack/amplify-ssmparamtest-dev-103943/0a7ed3b0-e795-11ec-8a67-0614227081b7",
       "AmplifyAppId": "d341hzme4qnq6e"
+    },
+    "categories": {
+      "auth": {
+        "ssmparamtestc115a5b2": {}
+      }
     }
   }
 }

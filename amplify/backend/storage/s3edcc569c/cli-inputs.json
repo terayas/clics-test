@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3edcc569c",
+  "policyUUID": "edcc569c",
+  "bucketName": "ssmparamtest05660585bd3248a096faba11040818a7",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
