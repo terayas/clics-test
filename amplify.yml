@@ -13,6 +13,7 @@ backend:
         - echo $AWS_BRANCH
         - chmod +x ./script.sh
         - export AWS_BRANCH=$AWS_BRANCH; export AWS_APP_ID=$AWS_APP_ID; ./script.sh
+        - $AWS_REGION
        
 frontend:
   phases:
