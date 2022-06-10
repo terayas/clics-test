@@ -6,7 +6,9 @@ backend:
       commands:
         - yum install --assumeyes jq
         - amazon-linux-extras install docker
-        - docker ps
+        - docker images
+        - docker pull amazonlinux:2022
+        - docker run -it --privileged amazonlinux:2022
 
     build:
       commands:
