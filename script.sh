@@ -2,6 +2,8 @@
 
 
 aws configure set cli_follow_urlparam false
+AWS_ACCOUNT=`aws ssm get-parameter --name "/amplify/account"|jq -r ".Parameter.Value"`
+
 # Put Amplify App URL to SSM Parameter at app_url
 aws ssm put-parameter --name "/amplify/app_url" --value "https://${AWS_BRANCH}.${AWS_APP_ID}.amplifyapp.com" --type "String" --overwrite
 
@@ -19,3 +21,6 @@ aws ssm put-parameter --name "/amplify/tablename" --value `aws appsync get-data-
 
 # Put Account
 aws ssm put-parameter --name "/amplify/account" --value `aws sts get-caller-identity|jq -r ".Account"` --type "String" --overwrite
+
+#Put ImageARN
+aws ssm put-parameter --name "/amplify/imageARN" --value "${AWS_ACCOUNT}.dkr.ecr.${AWS_Region}.amazonaws.com/`aws ssm get-parameter --name "/amplify/ecr_name"|jq -r ".Parameter.Value":latest`" --type "String" --overwrite
