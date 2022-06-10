@@ -6,7 +6,7 @@ backend:
       commands:
         - yum install --assumeyes jq
         - amazon-linux-extras install docker
-        - docker run --privileged
+        - sudo systemctl enable docker
 
     build:
       commands:
