@@ -18,4 +18,4 @@ aws ssm put-parameter --name "/amplify/graphql_api" --value "${APIURL}" --type "
 aws ssm put-parameter --name "/amplify/tablename" --value `aws appsync get-data-source --api-id ${API_ID} --name TodoTable|jq -r ".dataSource.dynamodbConfig.tableName"` --type "String" --overwrite
 
 # Put Account
-aws ssm put-parameter --name "/amplify/account" --value `aws sts get-caller-identity|jq -r ".Account"` --Type "String" --overwrite
+aws ssm put-parameter --name "/amplify/account" --value `aws sts get-caller-identity|jq -r ".Account"` --type "String" --overwrite
