@@ -5,6 +5,7 @@ backend:
     preBuild:
       commands:
         - yum install --assumeyes jq
+        - yum install --assumeyes docker
 
     build:
       commands:
